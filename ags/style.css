@@ -1,0 +1,92 @@
+window {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.bar {
+  background-color: rgba(30, 30, 46, 0.4);
+  font-family:
+    Ubuntu Nerd Font,
+    HanaMinA,
+    EPSON 行書体Ｍ;
+}
+
+.bar button {
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+}
+
+.bar button:active {
+  background-color: @theme_selected_bg_color;
+}
+
+.bar button:hover {
+  border-bottom: 3px solid @theme_fg_color;
+}
+
+label {
+  font-weight: bold;
+}
+
+.workspaces button.used {
+  border-bottom: 3px solid @theme_selected_bg_color;
+}
+
+.workspaces button.active {
+  border-bottom: 3px solid @theme_selected_bg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+.client-title {
+  color: @theme_selected_bg_color;
+}
+
+.notification {
+  color: #a6e3a1;
+}
+
+.volume button {
+  background-color: rgba(30, 30, 46, 0);
+  margin-right: -10px;
+  border: 0;
+}
+
+.volume button:hover {
+  background-color: rgba(30, 30, 46, 0);
+  border: 0;
+}
+
+.bat-icon {
+  margin-right: 3px;
+}
+
+.resal {
+  margin-left: 5px;
+}
+
+progress,
+highlight {
+  min-height: 8px;
+}
+
+.powermenu {
+  min-height: 1080px;
+  min-width: 1920px;
+  background-color: rgba(108, 112, 134, 0.8);
+}
+
+.powermenu-buttons {
+  min-width: 250px;
+  min-height: 250px;
+  border-radius: 15px;
+  margin: 50px;
+}
+
+.powermenu button {
+  background-color: rgba(180, 190, 254, 0.9);
+}
+
+.powermenu button:hover {
+  background-color: rgba(137, 180, 250, 0.9);
+}

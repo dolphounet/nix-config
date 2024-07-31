@@ -94,9 +94,19 @@ in {
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     neovim
-    inputs.home-manager.packages.${pkgs.system}.default
     bat
   ];
+
+  programs.fish.enable = true;
+  programs.bash = {
+    interactiveShellInit = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {
@@ -109,6 +119,7 @@ in {
 
   # Home manager
   home-manager = {
+    useUserPackages = true;
     backupFileExtension = "bckp";
     extraSpecialArgs = { inherit inputs outputs; };
     users.${username} = {
