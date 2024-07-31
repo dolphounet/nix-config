@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono NerdFont:size = 14";
+        font = "JetBrainsMono Nerd Font:size=12";
       };
       mouse = {
         hide-when-typing = "yes";
