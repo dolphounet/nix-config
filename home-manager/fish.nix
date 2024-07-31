@@ -5,8 +5,12 @@
 }: {
   programs.fish.enable = true;
   
-  home.packages = with pkgs; [
-    zoxide
-    
-  ]
+ # Zoxide
+ programs.zoxide = {
+   enable = true;
+   enableFishIntegration = true;
+   options = {
+    "--cmd cd"
+   };
+ };
 }
