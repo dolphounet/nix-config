@@ -18,6 +18,7 @@
     ./git.nix
     ./theme.nix
     ./packages.nix
+    ./fish.nix
   ];
 
   nixpkgs = {
