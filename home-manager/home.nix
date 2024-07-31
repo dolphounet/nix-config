@@ -19,6 +19,7 @@
     ./theme.nix
     ./packages.nix
     ./fish.nix
+    ./foot.nix
   ];
 
   nixpkgs = {
