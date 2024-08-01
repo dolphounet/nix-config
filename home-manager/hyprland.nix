@@ -7,7 +7,8 @@
     enable = true;
     xwayland.enable = true;
     settings = {
-    exec-once = [
+      monitor = ",preferred,auto,1.5";
+      exec-once = [
         "wl-paste --watch cliphist store"
         "fcitx5"
         "hypridle"
