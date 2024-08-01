@@ -161,5 +161,5 @@
     grim
     slurp
     cliphist
-  ]
+  ];
 }
