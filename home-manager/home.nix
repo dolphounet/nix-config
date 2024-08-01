@@ -22,6 +22,7 @@
     ./foot.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./hypridle.nix
   ];
 
   nixpkgs = {
