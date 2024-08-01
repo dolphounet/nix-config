@@ -115,6 +115,7 @@ in {
       "JetBrainsMono"
     ];
     })
+    noto-fonts-cjk-sans
   ];
 
   # fcitx5
