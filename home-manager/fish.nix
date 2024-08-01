@@ -5,6 +5,7 @@
 }: {
   programs.fish = {
     enable = true;
+    catppuccin.enable = false;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       cowsay "NixOS btw"
