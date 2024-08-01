@@ -23,6 +23,7 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./wofi.nix
   ];
 
   nixpkgs = {

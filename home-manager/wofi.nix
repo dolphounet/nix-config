@@ -6,7 +6,7 @@
   programs.wofi = {
     enable = true;
     settings = {
-      term="kitty";
+      term="foot";
       location="top";
       yoffset=280;
       width="25%";
@@ -30,7 +30,7 @@
       }
 
 
-      window {
+      #window {
         margin: 0px;
         border: 0.0px solid;
         /*border-color: rgb(235, 77, 129);*/
@@ -39,7 +39,7 @@
         color:  /*rgb(235, 77, 129)*/ #b4befe;
       }
 
-      input {
+      #input {
         margin: 15px;
         background-color: #6c7086;
         color: #11111b;
@@ -47,15 +47,15 @@
         border: 2px solid #b4befe;
       }
 
-      scroll {
+      #scroll {
         margin-bottom: 15px;
       }
 
-      entry {
+      #entry {
         margin: 0px 15px;
       }
 
-      entry:selected {
+      #entry:selected {
         /*background-color: /*rgb(245, 98, 36);*/
         background-color: #b4befe;
         color: #1e1e2e;
@@ -64,11 +64,11 @@
         outline: none;
       }
 
-      entry > box {
+      #entry > box {
         margin-left: 16px;
       }
 
-      entry image {
+      #entry image {
         padding-right: 10px;
       }
       ";
