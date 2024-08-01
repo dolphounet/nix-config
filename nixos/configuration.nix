@@ -95,6 +95,7 @@ in {
     wget
     neovim
     bat
+    btop
   ];
 
   programs.fish.enable = true;

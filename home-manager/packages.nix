@@ -5,10 +5,8 @@
     hyprpaper
     libreoffice-fresh
     hyprcursor
-    chezmoi
     gnome.gnome-themes-extra
-    gnome.gnome-calendar
-    nwg-look
     vlc
+    fastfetch
   ];
 }
