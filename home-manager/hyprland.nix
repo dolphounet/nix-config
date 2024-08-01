@@ -52,13 +52,13 @@
       };
 
       animations = {
-        enable = "yes";
+        enabled = "yes";
         bezier = [
           "myBezier, 0.05, 0.9, 0.1, 1.05"
           "anim, 0, 1, 0.5, 0.85"
         ];
         animation = [
-          "window, 1, 4, anim"
+          "windows, 1, 4, anim"
           "windowsOut, 1, 1, myBezier, popin 80%"
           "windowsMove, 1, 5, anim"
           "border, 1, 10, myBezier"
@@ -77,7 +77,7 @@
         workspace_swipe = "off";
       };
 
-      windowsrule = [
+      windowrule = [
         "tile, ^(MATLAB R2023b - academic use)$"
       ];
 
@@ -153,7 +153,7 @@
       ];
       bindri = [
         "$mainMod, SUPER_L, exec, pkill wofi || wofi --show drun"
-      ]
+      ];
     };
   };
 }
