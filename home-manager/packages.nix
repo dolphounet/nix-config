@@ -5,7 +5,7 @@
     hyprpaper
     libreoffice-fresh
     hyprcursor
-    gnome.gnome-themes-extra
+    gnome-themes-extra
     vlc
     fastfetch
   ];

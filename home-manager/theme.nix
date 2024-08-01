@@ -11,8 +11,8 @@
   };
 
   theme = {
-    name = "Catppuccin-Mocha-Standard-Lavender-Dark";
-    package = pkgs.catppuccin-gtk;
+    name = "Tokyonight-Dark";
+    package = pkgs.tokyonight-gtk-theme;
   };
 
   font = {
@@ -38,9 +38,8 @@ in {
       cantarell-fonts
       font-awesome
       jetbrains-mono
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       gtk-engine-murrine
-      tokyonight-gtk-theme
       theme.package
       font.package
       cursorTheme.package
@@ -61,9 +60,9 @@ in {
     };
 
   gtk = {
-    inherit font iconTheme;
+    inherit font iconTheme theme;
     enable = true;
-    catppuccin.enable = true;
+    catppuccin.enable = false;
   };
 
   xdg.configFile = {
