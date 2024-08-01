@@ -20,6 +20,8 @@
     ./packages.nix
     ./fish.nix
     ./foot.nix
+    ./hyprland.nix
+    ./hyprlock.nix
   ];
 
   nixpkgs = {
