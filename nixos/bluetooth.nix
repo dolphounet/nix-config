@@ -14,6 +14,5 @@
         };
       };
     };
-    pulseaudio.enable = true;
-  }
+  };
 }
