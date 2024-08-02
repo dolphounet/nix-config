@@ -14,6 +14,7 @@ in {
       ./sound.nix
       ./hyprland.nix
       ./plymouth.nix
+      ./bluetooth.nix
       inputs.home-manager.nixosModules.home-manager
     ];
 
