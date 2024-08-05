@@ -29,10 +29,14 @@ in {
       flake-registry = "";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
+
+      auto-optimise-store = true;
     };
     # Opinionated: make flake registry and nix path match flake inputs
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+
+    optimise.automatic = true;
   };
 
   # Bootloader.
@@ -159,6 +163,7 @@ in {
   hardware.graphics.extraPackages = with pkgs; [
     amdvlk
   ];
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
