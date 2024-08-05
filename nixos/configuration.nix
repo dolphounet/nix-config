@@ -50,6 +50,7 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
+  services.mullvad-vpn.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -97,6 +98,7 @@ in {
     neovim
     bat
     btop
+    mullvad-vpn
   ];
 
   programs.fish.enable = true;
