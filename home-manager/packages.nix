@@ -12,5 +12,8 @@
     qbittorrent
     qtrvsim
     floorp
+    obsidian
+    radeontop
+    feh
   ];
 }
