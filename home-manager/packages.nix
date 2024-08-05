@@ -15,5 +15,6 @@
     obsidian
     radeontop
     feh
+    freecad
   ];
 }
