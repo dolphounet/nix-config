@@ -11,5 +11,6 @@
     vesktop
     qbittorrent
     qtrvsim
+    floorp
   ];
 }

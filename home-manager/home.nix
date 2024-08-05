@@ -24,7 +24,7 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./wofi.nix
-    ./librewolf.nix
+    # ./librewolf.nix
     ./hyprpaper.nix
   ];
 

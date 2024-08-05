@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
   programs.librewolf = {
     enable = false;
     settings = {
