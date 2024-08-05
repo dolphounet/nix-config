@@ -17,6 +17,11 @@
     ags.url = "github:Aylur/ags";
 
     catppuccin.url = "github:catppuccin/nix";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
