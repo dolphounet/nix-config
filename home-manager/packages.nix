@@ -8,5 +8,8 @@
     gnome-themes-extra
     vlc
     fastfetch
+    vesktop
+    qbittorrent
+    qtrvsim
   ];
 }
