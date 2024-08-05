@@ -3,8 +3,9 @@
   pkgs,
   ...
 }: {
+  programs.firefox.enable = true;
   programs.librewolf = {
-    enable = true;
+    enable = false;
     settings = {
       "identity.fxaccounts.enabled" = true;
       "privacy.resistFingerprinting" = false;
