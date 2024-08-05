@@ -25,6 +25,7 @@
     ./hypridle.nix
     ./wofi.nix
     ./librewolf.nix
+    ./hyprpaper.nix
   ];
 
   nixpkgs = {
