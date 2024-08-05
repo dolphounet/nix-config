@@ -148,7 +148,10 @@ in {
       ];
     };
   };
-
+  
+  # USB support
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
   # Display manager
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
