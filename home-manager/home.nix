@@ -26,6 +26,7 @@
     ./wofi.nix
     # ./librewolf.nix
     ./hyprpaper.nix
+    ./xdg.nix
   ];
 
   nixpkgs = {
