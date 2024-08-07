@@ -15,6 +15,7 @@ in {
       ./hyprland.nix
       ./plymouth.nix
       ./bluetooth.nix
+      ./powerManagement.nix
       inputs.home-manager.nixosModules.home-manager
     ];
 
