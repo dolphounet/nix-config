@@ -14,6 +14,10 @@
       cat = "bat";
       ls = "eza";
     };
+    shellInitLast = ''
+      set -g direnv_fish_mode disable_arrow
+      direnv hook fish | source
+    '';
 
  }; 
  # Zoxide

@@ -58,7 +58,7 @@ in {
   services.mullvad-vpn.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Paris";
+  time.timeZone = "Asia/Jakarta";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -104,7 +104,10 @@ in {
     bat
     btop
     mullvad-vpn
+    devenv
   ];
+
+  programs.direnv.enable = true;
 
   programs.fish.enable = true;
   programs.bash = {
