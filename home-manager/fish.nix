@@ -13,6 +13,8 @@
     shellAliases = {
       cat = "bat";
       ls = "eza";
+      sudo = "sudo ";
+      echo = "echo ";
     };
     shellInitLast = ''
       set -g direnv_fish_mode disable_arrow
