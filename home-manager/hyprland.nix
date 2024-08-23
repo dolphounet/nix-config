@@ -6,6 +6,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    systemd.variables = ["--all"];
     settings = {
       monitor = ",preferred,auto,1.5";
       exec-once = [
@@ -15,6 +16,10 @@
         "hyprpaper"
         "ags"
         "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 32"
+      ];
+      env = [
+        "QT_QPA_PLATFORMTHEME,gtk2"
+        "QT_QPA_PLATFORM,wayland"
       ];
       xwayland = {
         force_zero_scaling = true;
@@ -107,6 +112,7 @@
         "$mainMod, Q, exec, foot"
         "$mainMod, C, killactive,"
         "$mainMod, E, exec, pcmanfm"
+        "$mainMod, T, exec, qbittorrent"
         "$mainMod, f, togglefloating,"
         "$mainMod, P, pseudo,"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"

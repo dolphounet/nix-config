@@ -73,8 +73,9 @@ in {
 
   qt = {
     enable = true;
-    style.name = "kvantum";
-    platformTheme.name = "kvantum";
+    style.catppuccin.enable = false;
+    #style.name = "gtk";
+    platformTheme.name = "gtk";
   };
   
   catppuccin = {
