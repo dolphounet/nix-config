@@ -16,12 +16,16 @@
       sudo = "sudo ";
       echo = "echo ";
     };
-    shellInitLast = ''
-      set -g direnv_fish_mode disable_arrow
-      direnv hook fish | source
-    '';
 
  }; 
+
+# direnv
+programs.direnv = {
+  enable = true;
+  enableFishIntegration = true;
+  nix-direnv.enable = true;
+};
+
  # Zoxide
  programs.zoxide = {
    enable = true;
