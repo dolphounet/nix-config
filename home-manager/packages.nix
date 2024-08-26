@@ -16,5 +16,7 @@
     radeontop
     feh
     freecad
+    gimp
+    blender
   ];
 }
