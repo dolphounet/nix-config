@@ -18,5 +18,8 @@
     freecad
     gimp
     blender
+    glfw
+    zip
+    unzip
   ];
 }
