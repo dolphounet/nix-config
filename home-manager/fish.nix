@@ -15,28 +15,28 @@
       ls = "eza";
       sudo = "sudo ";
       echo = "echo ";
+      gitflake = "git add flake.lock && git commit -m 'nix flake update'";
     };
+  };
 
- }; 
+  # direnv
+  programs.direnv = {
+    enable = true;
+    #enableFishIntegration = true;
+    nix-direnv.enable = true;
+  };
 
-# direnv
-programs.direnv = {
-  enable = true;
-  #enableFishIntegration = true;
-  nix-direnv.enable = true;
-};
+  # Zoxide
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
 
- # Zoxide
- programs.zoxide = {
-   enable = true;
-   enableFishIntegration = true;
-   options = [
-    "--cmd cd"
-   ];
- };
-
- home.packages = with pkgs; [
-  cowsay
-  eza
- ];
+  home.packages = with pkgs; [
+    cowsay
+    eza
+  ];
 }
