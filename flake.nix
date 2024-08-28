@@ -18,6 +18,8 @@
 
     catppuccin.url = "github:catppuccin/nix";
 
+    nix-nvim.url = "github:dolphounet/nix-nvim";
+
   };
 
   outputs = {
