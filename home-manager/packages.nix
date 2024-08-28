@@ -21,5 +21,6 @@
     glfw
     zip
     unzip
+    unityhub
   ];
 }
