@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     bat
     cava
@@ -22,5 +26,7 @@
     zip
     unzip
     unityhub
+    eclipses.eclipse-java
+    jdk8
   ];
 }
