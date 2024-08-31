@@ -8,7 +8,7 @@
     catppuccin.enable = false;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
-      cowsay "NixOS btw"
+      pokemonsay -N "I use NixOS btw"
     '';
     shellAliases = {
       cat = "bat";
@@ -37,6 +37,7 @@
 
   home.packages = with pkgs; [
     cowsay
+    pokemonsay
     eza
   ];
 }
