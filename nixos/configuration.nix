@@ -1,23 +1,27 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ 
-  inputs, outputs, config, pkgs, lib, ... 
+{
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  lib,
+  ...
 }: let
   username = "maxence";
   hostname = "nixos";
 in {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./sound.nix
-      ./hyprland.nix
-      ./plymouth.nix
-      ./bluetooth.nix
-      ./powerManagement.nix
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./sound.nix
+    ./hyprland.nix
+    ./plymouth.nix
+    ./bluetooth.nix
+    ./powerManagement.nix
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
   # Flakes
   nix = let
@@ -44,7 +48,7 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = ["amdgpu"];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -88,7 +92,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     description = "maxence";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
@@ -101,12 +105,13 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     nvim-pkg
     bat
     btop
     mullvad-vpn
+    dua #Disk space usage ($ dua /)
   ];
 
   programs.bash = {
@@ -121,30 +126,30 @@ in {
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {
-    fonts = [
-      "Ubuntu"
-      "JetBrainsMono"
-    ];
+      fonts = [
+        "Ubuntu"
+        "JetBrainsMono"
+      ];
     })
     noto-fonts-cjk-sans
   ];
 
   # fcitx5
   i18n.inputMethod = {
-   type = "fcitx5";
-   enable = true;
-   fcitx5.waylandFrontend = true;
-   fcitx5.addons = with pkgs; [
-     fcitx5-mozc
-     fcitx5-gtk
-     fcitx5-tokyonight
-   ];
+    type = "fcitx5";
+    enable = true;
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+      fcitx5-tokyonight
+    ];
   };
   # Home manager
   home-manager = {
     useUserPackages = true;
     backupFileExtension = "bckp";
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
     users.${username} = {
       home.username = username;
       home.homeDirectory = "/home/${username}";
@@ -155,7 +160,7 @@ in {
       ];
     };
   };
-  
+
   # USB support
   services.gvfs.enable = true;
   services.udisks2.enable = true;
@@ -200,5 +205,4 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
