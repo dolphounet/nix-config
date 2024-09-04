@@ -1,36 +1,35 @@
-{pkgs, ...}:
-{
-  
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-    
-    xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
-    };
+{pkgs, ...}: {
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
-    security = {
-      polkit.enable = true;
-      pam.services.ags = {};
-    };
-
-    environment.systemPackages = with pkgs; [
-      pcmanfm
-      hyprpaper
-      adwaita-icon-theme
-      pavucontrol
-      brightnessctl
-      wl-clipboard
-      hyprland-protocols
-      grim
-      slurp
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
     ];
+  };
 
-    services = {
-      upower.enable = true;
-    };
+  security = {
+    polkit.enable = true;
+    pam.services.ags = {};
+  };
+
+  environment.systemPackages = with pkgs; [
+    pcmanfm
+    hyprpaper
+    adwaita-icon-theme
+    pavucontrol
+    brightnessctl
+    wl-clipboard
+    hyprland-protocols
+    grim
+    slurp
+  ];
+
+  services = {
+    upower.enable = true;
+    hypridle.enable = true;
+  };
 }

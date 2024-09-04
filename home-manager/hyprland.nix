@@ -12,8 +12,6 @@
       exec-once = [
         "wl-paste --watch cliphist store"
         "fcitx5"
-        "hypridle"
-        "hyprpaper"
         "ags"
         "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 32"
       ];
