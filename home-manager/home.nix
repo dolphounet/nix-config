@@ -7,28 +7,6 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
-    ./ags.nix
-    ./git.nix
-    ./theme.nix
-    ./packages.nix
-    ./fish.nix
-    ./foot.nix
-    ./hyprland.nix
-    ./hyprlock.nix
-    ./hypridle.nix
-    ./wofi.nix
-    # ./librewolf.nix
-    ./hyprpaper.nix
-    ./xdg.nix
-  ];
-
   nixpkgs = {
     # You can add overlays here
     overlays = [

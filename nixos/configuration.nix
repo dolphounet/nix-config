@@ -14,12 +14,6 @@
 in {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./sound.nix
-    ./hyprland.nix
-    ./plymouth.nix
-    ./bluetooth.nix
-    ./powerManagement.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -50,7 +44,7 @@ in {
 
   boot.initrd.kernelModules = ["amdgpu"];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -91,7 +85,7 @@ in {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    description = "maxence";
+    description = "${username}";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
@@ -155,7 +149,7 @@ in {
       home.homeDirectory = "/home/${username}";
       # Import your home-manager configuration
       imports = [
-        ../home-manager/home.nix
+        ../home-manager
         inputs.catppuccin.homeManagerModules.catppuccin
       ];
     };

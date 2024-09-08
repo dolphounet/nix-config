@@ -19,7 +19,6 @@
     catppuccin.url = "github:catppuccin/nix";
 
     nix-nvim.url = "github:dolphounet/nix-nvim";
-
   };
 
   outputs = {
@@ -40,7 +39,7 @@
         system = "x86_64-linux";
         # > Our main nixos configuration file <
         modules = [
-          ./nixos/configuration.nix
+          ./nixos
           lix-module.nixosModules.default
           catppuccin.nixosModules.catppuccin
         ];
