@@ -107,6 +107,7 @@ in {
     mullvad-vpn
     dua #Disk space usage ($ dua /)
     polkit_gnome
+    gparted
   ];
 
   programs.bash = {
@@ -160,12 +161,15 @@ in {
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   # Display manager
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.wayland.enable = true;
   # Vulkan
   hardware.graphics.extraPackages = with pkgs; [
     amdvlk
   ];
+  # Cosmic DE
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
 
   security.polkit.enable = true;
   systemd = {
