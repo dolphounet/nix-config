@@ -106,6 +106,7 @@ in {
     btop
     mullvad-vpn
     dua #Disk space usage ($ dua /)
+    polkit_gnome
   ];
 
   programs.bash = {
@@ -165,6 +166,26 @@ in {
   hardware.graphics.extraPackages = with pkgs; [
     amdvlk
   ];
+
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+    extraConfig = ''
+      DefaultTimeoutStopSec=10s
+    '';
+  };
 
   programs.steam = {
     enable = true;

@@ -12,7 +12,6 @@
   };
 
   security = {
-    polkit.enable = true;
     pam.services.ags = {};
   };
 
