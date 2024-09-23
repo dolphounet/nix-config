@@ -19,11 +19,6 @@
     catppuccin.url = "github:catppuccin/nix";
 
     nix-nvim.url = "github:dolphounet/nix-nvim";
-
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -32,7 +27,6 @@
     home-manager,
     lix-module,
     catppuccin,
-    nixos-cosmic,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -45,16 +39,9 @@
         system = "x86_64-linux";
         # > Our main nixos configuration file <
         modules = [
-          {
-            nix.settings = {
-              substituters = ["https://cosmic.cachix.org"];
-              trusted-public-keys = ["cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="];
-            };
-          }
           ./nixos
           lix-module.nixosModules.default
           catppuccin.nixosModules.catppuccin
-          nixos-cosmic.nixosModules.default
         ];
       };
     };
