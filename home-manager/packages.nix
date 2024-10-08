@@ -10,7 +10,6 @@
     libreoffice-fresh
     hyprcursor
     gnome-themes-extra
-    vlc
     fastfetch
     vesktop
     qbittorrent
