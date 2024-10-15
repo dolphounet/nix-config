@@ -19,6 +19,9 @@
     catppuccin.url = "github:catppuccin/nix";
 
     nix-nvim.url = "github:dolphounet/nix-nvim";
+
+    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+    flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -27,6 +30,7 @@
     home-manager,
     lix-module,
     catppuccin,
+    flake-programs-sqlite,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -42,6 +46,7 @@
           ./nixos
           lix-module.nixosModules.default
           catppuccin.nixosModules.catppuccin
+          flake-programs-sqlite.nixosModules.programs-sqlite
         ];
       };
     };
