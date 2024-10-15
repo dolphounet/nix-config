@@ -60,15 +60,16 @@
         bezier = [
           "myBezier, 0.05, 0.9, 0.1, 1.05"
           "anim, 0, 1, 0.5, 0.85"
+          "fastAnim, 0.91, 0.53, 0.85, 0.27"
         ];
         animation = [
-          "windows, 1, 4, anim"
+          "windows, 1, 2, fastAnim"
           "windowsOut, 1, 1, myBezier, popin 80%"
-          "windowsMove, 1, 5, anim"
-          "border, 1, 10, myBezier"
-          "borderangle, 1, 8, myBezier"
-          "fade, 1, 4, default"
-          "workspaces, 1, 6, default"
+          "windowsMove, 0, 1, fastAnim"
+          "border, 1, 1, myBezier"
+          "borderangle, 1, 1, myBezier"
+          "fade, 1, 1, fastAnim"
+          "workspaces, 1, 2, fastAnim"
         ];
       };
 
