@@ -51,13 +51,13 @@ in {
       XCURSOR_SIZE = cursorTheme.size;
     };
   };
-  
+
   dconf.enable = true;
   dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
+  };
 
   gtk = {
     inherit font iconTheme theme;
@@ -77,7 +77,7 @@ in {
     #style.name = "gtk";
     platformTheme.name = "gtk";
   };
-  
+
   catppuccin = {
     flavor = "mocha";
     accent = "blue";

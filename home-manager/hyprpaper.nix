@@ -9,10 +9,10 @@
       ipc = "off";
       splash = true;
       preload = [
-        "../wallpaper/wallpaper.jpg"
+        "/home/maxence/nix-config/wallpaper/wallpaper.jpg"
       ];
       wallpaper = [
-        "eDP-1,../wallpaper/wallpaper.jpg"
+        "eDP-1,/home/maxence/nix-config/wallpaper/wallpaper.jpg"
       ];
     };
   };
