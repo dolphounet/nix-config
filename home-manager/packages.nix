@@ -28,5 +28,6 @@
     eclipses.eclipse-java
     jdk8
     osu-lazer-bin
+    obs-studio
   ];
 }
