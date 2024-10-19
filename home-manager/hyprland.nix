@@ -100,7 +100,7 @@
       misc = {
         disable_hyprland_logo = true;
         vrr = 1;
-        enable_swallow = true;
+        enable_swallow = false;
         swallow_regex = "^(foot)$";
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
@@ -150,6 +150,7 @@
         ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86TouchpadToggle, exec, hyprctl keyword device[asue120c:00-04f3:31c1-touchpad]:enabled 1"
         ", Next, exec, brightnessctl -d asus::kbd_backlight set 1-"
         ", Prior, exec, brightnessctl -d asus::kbd_backlight set +1"
       ];
