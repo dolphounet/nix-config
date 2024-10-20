@@ -17,7 +17,7 @@
       ];
       env = [
         "QT_QPA_PLATFORMTHEME,gtk2"
-        "QT_QPA_PLATFORM,wayland"
+        #"QT_QPA_PLATFORM,wayland"
       ];
       xwayland = {
         force_zero_scaling = true;

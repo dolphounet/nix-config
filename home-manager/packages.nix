@@ -29,5 +29,6 @@
     jdk8
     osu-lazer-bin
     obs-studio
+    kdePackages.kdenlive
   ];
 }
