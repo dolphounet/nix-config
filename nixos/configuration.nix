@@ -196,6 +196,9 @@ in {
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  #virtualisation.virtualbox.host.enable = true;
+  #users.extraGroups.vboxusers.members = ["${username}"];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -205,7 +208,37 @@ in {
   # };
 
   # List services that you want to enable:
+  services.vault = {
+    enable = false;
+    package = pkgs.vault;
 
+    # Basic configuration
+    address = "0.0.0.0:8200";
+
+    # Storage configuration (using file storage as example)
+    storageBackend = "file";
+    storagePath = "/var/lib/vault";
+
+    # Extra configuration
+    extraConfig = ''
+      ui = true
+
+      listener "tcp" {
+        address     = "0.0.0.0:8200"
+        tls_disable = 1  # Enable TLS in production!
+      }
+
+      storage "file" {
+        path = "/var/lib/vault/data"
+      }
+
+      api_addr = "http://127.0.0.1:8200"
+    '';
+  };
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
