@@ -13,7 +13,11 @@
         "wl-paste --watch cliphist store"
         "fcitx5"
         "ags"
-        "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 32"
+        "hyprctl setcursor Banana-Tokyo-Night-Storm 48"
+      ];
+      exec = [
+        ''gsettings set org.gnome.desktop.interface cursor-theme "Banana-Tokyo-Night-Storm"''
+        ''gsettings set org.gnome.desktop.interface cursor-size 48''
       ];
       env = [
         "QT_QPA_PLATFORMTHEME,gtk2"

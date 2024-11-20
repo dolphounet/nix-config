@@ -35,6 +35,12 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
+    packages."x86_64-linux" = let
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    in {
+      banana-cursor-dreams = pkgs.callPackage ./pkgs/banana-cursor-dreams.nix {};
+    };
+
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {

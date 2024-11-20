@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  outputs,
   ...
 }: let
   nerdfonts = pkgs.nerdfonts.override {
@@ -78,6 +79,13 @@ in {
     platformTheme.name = "gtk";
   };
 
+  home.pointerCursor = {
+    x11.enable = true;
+    gtk.enable = true;
+    package = outputs.packages."x86_64-linux".banana-cursor-dreams;
+    size = 48;
+    name = "Banana-Tokyo-Night-Storm"; # Change to whatever theme you like
+  };
   #catppuccin = {
   #  flavor = "mocha";
   #  accent = "blue";
