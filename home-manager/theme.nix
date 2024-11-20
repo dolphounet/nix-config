@@ -21,11 +21,11 @@
     size = 14;
   };
 
-  cursorTheme = {
-    name = "Catppuccin-Mocha-Dark-Cursors";
-    package = pkgs.catppuccin-cursors;
-    size = 32;
-  };
+  #cursorTheme = {
+  #  name = "Catppuccin-Mocha-Dark-Cursors";
+  #  package = pkgs.catppuccin-cursors;
+  #  size = 32;
+  #};
 
   iconTheme = {
     name = "MoreWaita";
@@ -42,14 +42,14 @@ in {
       gtk-engine-murrine
       theme.package
       font.package
-      cursorTheme.package
+      #cursorTheme.package
       iconTheme.package
     ];
 
-    sessionVariables = {
-      XCURSOR_THEME = cursorTheme.name;
-      XCURSOR_SIZE = cursorTheme.size;
-    };
+    #sessionVariables = {
+    #  XCURSOR_THEME = cursorTheme.name;
+    #  XCURSOR_SIZE = cursorTheme.size;
+    #};
   };
 
   dconf.enable = true;
@@ -62,7 +62,7 @@ in {
   gtk = {
     inherit font iconTheme theme;
     enable = true;
-    catppuccin.enable = false;
+    #catppuccin.enable = false;
   };
 
   xdg.configFile = {
@@ -73,19 +73,19 @@ in {
 
   qt = {
     enable = true;
-    style.catppuccin.enable = false;
+    #style.catppuccin.enable = false;
     #style.name = "gtk";
     platformTheme.name = "gtk";
   };
 
-  catppuccin = {
-    flavor = "mocha";
-    accent = "blue";
-    enable = true;
-    pointerCursor = {
-      enable = true;
-      flavor = "mocha";
-      accent = "blue";
-    };
-  };
+  #catppuccin = {
+  #  flavor = "mocha";
+  #  accent = "blue";
+  #  enable = true;
+  #  pointerCursor = {
+  #    enable = true;
+  #    flavor = "mocha";
+  #    accent = "blue";
+  #  };
+  #};
 }
