@@ -41,7 +41,7 @@ in {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = ["amdgpu"];
 
   networking.hostName = hostname; # Define your hostname.
@@ -105,7 +105,7 @@ in {
     bat
     btop
     mullvad-vpn
-    dua #Disk space usage ($ dua /)
+    dua #Disk space usage ($ dua i /)
     polkit_gnome
     gparted
     mpv
@@ -132,16 +132,16 @@ in {
   ];
 
   # fcitx5
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-      fcitx5-tokyonight
-    ];
-  };
+  #i18n.inputMethod = {
+  #  type = "fcitx5";
+  #  enable = true;
+  #  fcitx5.waylandFrontend = true;
+  #  fcitx5.addons = with pkgs; [
+  #    fcitx5-mozc
+  #    fcitx5-gtk
+  #    fcitx5-tokyonight
+  #  ];
+  #};
   # Home manager
   home-manager = {
     useUserPackages = true;
