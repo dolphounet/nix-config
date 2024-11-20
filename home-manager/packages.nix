@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     bat
-    cava
+    #cava
     hyprpaper
     libreoffice-fresh
     hyprcursor
