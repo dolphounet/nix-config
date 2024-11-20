@@ -115,7 +115,7 @@
         "$mainMod, f, togglefloating,"
         "$mainMod, P, pseudo,"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "$mainMod SHIFT, s, exec, hyprctl keyword monitor ,preferred,auto,1 && grimblast copysave area && hyprctl keyword monitor ,preferred,auto,1.5"
+        "$mainMod SHIFT, s, exec, grimblast copysave area"
         "$mainMod, x, exec, ags -t powermenu"
         "$mainMod, v, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy"
         "$mainMod, left, movefocus, l"
