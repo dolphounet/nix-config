@@ -1,32 +1,27 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     bat
     #cava
     hyprpaper
-    libreoffice-fresh
+    libreoffice-still
     hyprcursor
     gnome-themes-extra
-    fastfetch
+    microfetch
     vesktop
     qbittorrent
-    qtrvsim
+    #qtrvsim
     floorp
     obsidian
     radeontop
     feh
-    freecad
+    #freecad
     gimp
     blender
-    glfw
     zip
     unzip
     unityhub
     eclipses.eclipse-java
-    jdk8
+    #jdk8
     osu-lazer-bin
     obs-studio
     kdePackages.kdenlive
