@@ -4,6 +4,7 @@
   ];
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "schedutil";
+    cpuFreqGovernor = "ondemand";
   };
+  services.upower.enable = true;
 }

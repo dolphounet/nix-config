@@ -16,7 +16,13 @@ in {
     # Include the results of the hardware scan.
     inputs.home-manager.nixosModules.home-manager
   ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-core-combined"
 
+    "dotnet-sdk-6.0.428"
+
+    "dotnet-sdk-wrapped-6.0.428"
+  ];
   # Flakes
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
@@ -56,7 +62,7 @@ in {
   services.mullvad-vpn.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Asia/Jakarta";
+  time.timeZone = "Europe/Paris";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -86,7 +92,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
   };
 
@@ -109,6 +115,7 @@ in {
     polkit_gnome
     gparted
     mpv
+    distrobox
   ];
 
   programs.bash = {
@@ -122,12 +129,6 @@ in {
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "Ubuntu"
-        "JetBrainsMono"
-      ];
-    })
     noto-fonts-cjk-sans
   ];
 
@@ -197,7 +198,14 @@ in {
   };
 
   #virtualisation.virtualbox.host.enable = true;
+  #virtualisation.docker.enable = true;
   #users.extraGroups.vboxusers.members = ["${username}"];
+
+  # Distrobox
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -28,7 +28,6 @@
   ];
 
   services = {
-    upower.enable = true;
     hypridle.enable = true;
   };
 }
