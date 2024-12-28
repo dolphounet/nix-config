@@ -1,8 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     bat
     #cava
     hyprpaper
+    gnome-terminal
     libreoffice-still
     hyprcursor
     gnome-themes-extra
@@ -25,5 +30,7 @@
     osu-lazer-bin
     obs-studio
     kdePackages.kdenlive
+    python311
+    inputs.ghostty.packages."${pkgs.system}".default
   ];
 }
