@@ -4,13 +4,6 @@
   outputs,
   ...
 }: let
-  nerdfonts = pkgs.nerdfonts.override {
-    fonts = [
-      "Ubuntu"
-      "JetBrainsMono"
-    ];
-  };
-
   theme = {
     name = "Tokyonight-Dark";
     package = pkgs.tokyonight-gtk-theme;
@@ -18,7 +11,6 @@
 
   font = {
     name = "Ubuntu Nerd Font";
-    package = nerdfonts;
     size = 14;
   };
 
@@ -42,9 +34,9 @@ in {
       adwaita-icon-theme
       gtk-engine-murrine
       theme.package
-      font.package
-      #cursorTheme.package
       iconTheme.package
+      nerd-fonts.ubuntu
+      nerd-fonts.jetbrains-mono
     ];
 
     #sessionVariables = {
