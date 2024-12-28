@@ -22,6 +22,8 @@
 
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
+
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = {
@@ -31,6 +33,7 @@
     lix-module,
     catppuccin,
     flake-programs-sqlite,
+    ghostty,
     ...
   } @ inputs: let
     inherit (self) outputs;
