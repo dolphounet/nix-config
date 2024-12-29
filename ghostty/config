@@ -1,0 +1,16 @@
+font-family = IosevkaCustom Nerd Font
+font-size = 15
+cursor-style = bar
+cursor-style-blink = true
+mouse-hide-while-typing = true
+shell-integration-features = no-cursor
+theme = tokyonight-storm
+window-decoration = false
+clipboard-read = allow
+auto-update = off
+confirm-close-surface = false
+keybind = ctrl+enter=unbind
+gtk-single-instance = true
+adjust-cursor-thickness = 2
+adjust-cursor-height = -15%
+resize-overlay = never
