@@ -16,6 +16,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    hyprpaper
     nautilus
     adwaita-icon-theme
     pavucontrol
