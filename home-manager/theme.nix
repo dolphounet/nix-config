@@ -4,6 +4,9 @@
   outputs,
   ...
 }: let
+  epson-font = pkgs.callPackage ../pkgs/epson.nix {inherit pkgs;};
+  iosevka-custom = pkgs.callPackage ../pkgs/iosevka-custom.nix {inherit pkgs;};
+
   theme = {
     name = "Tokyonight-Dark";
     package = pkgs.tokyonight-gtk-theme;
@@ -14,12 +17,6 @@
     size = 14;
   };
 
-  #cursorTheme = {
-  #  name = "Catppuccin-Mocha-Dark-Cursors";
-  #  package = pkgs.catppuccin-cursors;
-  #  size = 32;
-  #};
-
   iconTheme = {
     name = "MoreWaita";
     package = pkgs.morewaita-icon-theme;
@@ -27,6 +24,8 @@
 in {
   home = {
     packages = with pkgs; [
+      epson-font
+      iosevka-custom
       gtk3
       cantarell-fonts
       font-awesome
@@ -55,7 +54,6 @@ in {
   gtk = {
     inherit font iconTheme theme;
     enable = true;
-    #catppuccin.enable = false;
   };
 
   xdg.configFile = {
@@ -66,8 +64,6 @@ in {
 
   qt = {
     enable = true;
-    #style.catppuccin.enable = false;
-    #style.name = "gtk";
     platformTheme.name = "gtk";
   };
 
@@ -78,14 +74,4 @@ in {
     size = 48;
     name = "Banana-Tokyo-Night-Storm"; # Change to whatever theme you like
   };
-  #catppuccin = {
-  #  flavor = "mocha";
-  #  accent = "blue";
-  #  enable = true;
-  #  pointerCursor = {
-  #    enable = true;
-  #    flavor = "mocha";
-  #    accent = "blue";
-  #  };
-  #};
 }
