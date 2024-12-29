@@ -111,10 +111,12 @@
       };
 
       "$mainMod" = "SUPER";
+      "$term" = "ghostty";
+      "$fileManager" = "nautilus";
       bind = [
-        "$mainMod, Q, exec, foot"
+        "$mainMod, Q, exec, $term"
         "$mainMod, C, killactive,"
-        "$mainMod, E, exec, pcmanfm"
+        "$mainMod, E, exec, $fileManager"
         "$mainMod, T, exec, qbittorrent"
         "$mainMod, f, togglefloating,"
         "$mainMod, P, pseudo,"
@@ -122,10 +124,10 @@
         "$mainMod SHIFT, s, exec, grimblast copysave area"
         "$mainMod, x, exec, ags -t powermenu"
         "$mainMod, v, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy"
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
         "$mainMod, ampersand, workspace, 1"
         "$mainMod, eacute, workspace, 2"
         "$mainMod, quotedbl, workspace, 3"

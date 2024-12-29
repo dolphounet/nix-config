@@ -16,15 +16,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-    pcmanfm
-    hyprpaper
+    nautilus
     adwaita-icon-theme
     pavucontrol
     brightnessctl
     wl-clipboard
     hyprland-protocols
-    grim
-    slurp
   ];
 
   services = {
