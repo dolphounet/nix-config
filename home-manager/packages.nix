@@ -5,29 +5,20 @@
 }: {
   home.packages = with pkgs; [
     bat
-    #cava
-    hyprpaper
-    gnome-terminal
     libreoffice-still
     hyprcursor
     gnome-themes-extra
     microfetch
     vesktop
     qbittorrent
-    #qtrvsim
     floorp
     obsidian
     radeontop
     feh
-    #freecad
     gimp
     blender
     zip
     unzip
-    unityhub
-    eclipses.eclipse-java
-    #jdk8
-    osu-lazer-bin
     obs-studio
     kdePackages.kdenlive
     python311
