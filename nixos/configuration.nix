@@ -128,6 +128,10 @@ in {
     '';
   };
 
+  environment.sessionVariables = rec {
+    SHELL = "fish";
+  };
+
   fonts.packages = with pkgs; [
     noto-fonts-cjk-sans
   ];
