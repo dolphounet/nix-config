@@ -59,7 +59,7 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
-  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -110,7 +110,7 @@ in {
     nvim-pkg
     bat
     btop
-    mullvad-vpn
+    # mullvad-vpn
     dua #Disk space usage ($ dua i /)
     polkit_gnome
     gparted

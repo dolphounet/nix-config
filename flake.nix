@@ -24,6 +24,7 @@
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
 
     ghostty.url = "github:ghostty-org/ghostty";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = {
@@ -34,6 +35,7 @@
     catppuccin,
     flake-programs-sqlite,
     ghostty,
+    zen-browser,
     ...
   } @ inputs: let
     inherit (self) outputs;
